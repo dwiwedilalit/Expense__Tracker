@@ -1,0 +1,47 @@
+﻿@model Expense_Tracker.Models.Category
+
+@{
+    ViewData["PageTitle"] = Model.CategoryId == 0? "Create a new category" : "Edit Category";
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <div class="col-md-7">
+            <div class="widget p-4" style="background-color:turquoise; opacity:60%;">
+                <form asp-action="AddorEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+            <div class="mb-3" >
+            <div class='e-btn-group custom-rbt-group'>
+                <input type="radio" id="radioleft" name="Type" value="Expense" />
+                    <label class="e-btn" for="radioleft">Expense</label>
+                    <input type="radio" id="radiomiddle" name="Type" value="Income"  />
+                    <label class="e-btn" for="radiomiddle">Income</label>
+
+            </div>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="title" name="Title" placeholder="Title" ejs-for="Title"  floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+            </div><br />
+        </div>
+        
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary" style="background-color:darkgray;"><i class="bi bi-backspace-fill"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

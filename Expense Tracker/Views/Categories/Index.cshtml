@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Expense_Tracker.Models.Category>
+
+@{
+    ViewData["PageTitle"] = "Categories";
+   
+}
+
+
+
+<p>
+    <a asp-action="AddorEdit" class="btn btn-success"><i class="bi bi-plus"></i>Create New</a>
+     <a asp-controller="Dashboard" asp-action="Index" class="btn btn-success" style="background-color:olivedrab;"><i class="bi bi-house-door"></i> back to Dashboard</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td style="width:30%;">
+                <div class="w-75 btn-group" role="group">
+                        <a asp-action="AddorEdit" asp-route-id="@item.CategoryId" class="btn btn-primary mx-0 " style="width:2%;"><i class="bi bi-pencil-square"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-secondary mx-2" style="width:2%;"><i class="bi bi-info-circle-fill"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-danger "style="width:2%;"><i class="bi bi-trash-fill"></i></a>
+                        
+                </div>
+                    
+                
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+

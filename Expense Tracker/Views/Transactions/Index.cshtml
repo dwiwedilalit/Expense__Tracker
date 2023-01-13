@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Expense_Tracker.Models.Transaction>
+
+@{
+    ViewData["PageTitle"] = "Transactions";
+}
+
+
+
+<p>
+    <a asp-action="AddorEdit" class="btn btn-success"><i class="bi bi-plus"></i>Create New</a>
+    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-success" style="background-color:olivedrab;"><i class="bi bi-house-door"></i> back to Dashboard</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>            
+           <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormattedAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                  <a asp-action="AddorEdit" asp-route-id="@item.TransactionId" class="btn btn-primary mx-0 " style="width:40%; padding:5px;"><i class="bi bi-pencil-square"></i></a>
+                    
+                    <a asp-action="Delete" asp-route-id="@item.TransactionId" class="btn btn-danger " style="width:40%; padding:5px;"><i class="bi bi-trash-fill"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

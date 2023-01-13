@@ -1,0 +1,51 @@
+﻿@model Expense_Tracker.Models.Transaction
+
+@*@{
+    ViewData["PageTitle"] = Model.TransactionId == 0? "Create a new transactions" : "Edit transactions";
+}*@
+
+
+<hr />
+<div class="row" >
+    <div class="col-md-8">
+         <div class="col-md-7">
+            <div class="widget p-4" style="background-color:turquoise; opacity:85%;">
+        <form asp-action="AddorEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="TransactionId" value="@Model.TransactionId" />
+                    <div class="mb-3">
+                        <ejs-datepicker id="date" ejs-for="Date" placeholder="Date" floatLabelType="Always" format="MMM-dd-yyyy"></ejs-datepicker>
+                        
+                    </div>
+            <div class="mb-3">
+                <ejs-dropdownlist id="ddlCategory" ejs-for="CategoryId" dataSource="@ViewBag.Categories" placeholder="Category" 
+                 floatLabelType="Always" allowFiltering="true" ignoreAccent="true" filterType="Contains" popupHeight="220px">
+                    <e-dropdownlist-fields value="CategoryId" text="Title"></e-dropdownlist-fields>
+                </ejs-dropdownlist>
+                <span asp-validation-for="CategoryId" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                        <ejs-numerictextbox id="Amount" placeholder="Amount" ejs-for="Amount" floatLabelType="Always" min=0 format="₹ 0"></ejs-numerictextbox>
+                <span asp-validation-for="Amount" class="text-danger fs-6"></span>
+            </div>
+            <div class="mb-3">
+                        <ejs-textbox id="Note" placeholder="Note" ejs-for="Note" floatLabelType="Always" multiline="true"></ejs-textbox>
+                
+            </div>
+            
+            <div class="mb-3">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+        </div><br />
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary" style="background-color:darkgray;"><i class="bi bi-backspace-fill"></i>Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

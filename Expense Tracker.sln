@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Expense Tracker", "Expense Tracker\Expense Tracker.csproj", "{61CBC771-25F7-456C-9665-C4849F7BAAB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CE796FC2-3882-4617-9A05-C97BAB8F07E3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseTrackerWeb", "..\..\New folder\NewWebApp\ExpenseTracker\ExpenseTrackerWeb\ExpenseTrackerWeb.csproj", "{59DE64AA-034A-45C8-B139-390DB88E4BA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61CBC771-25F7-456C-9665-C4849F7BAAB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CBC771-25F7-456C-9665-C4849F7BAAB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CBC771-25F7-456C-9665-C4849F7BAAB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CBC771-25F7-456C-9665-C4849F7BAAB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DE64AA-034A-45C8-B139-390DB88E4BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DE64AA-034A-45C8-B139-390DB88E4BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DE64AA-034A-45C8-B139-390DB88E4BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DE64AA-034A-45C8-B139-390DB88E4BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62253616-4B67-4AAC-B077-486BDA69894C}
+	EndGlobalSection
+EndGlobal

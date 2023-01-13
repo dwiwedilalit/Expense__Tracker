@@ -1,0 +1,30 @@
+﻿@model Expense_Tracker.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="AddorEdit" asp-route-id="@Model?.CategoryId" class="btn btn-secondary"><i class="bi bi-pencil-fill"></i>Edit</a> 
+    <a asp-action="Index" class="btn btn-outline-secondary" style="background-color:darkgray;"><i class="bi bi-backspace-fill"></i>Back to List</a>
+</div>
